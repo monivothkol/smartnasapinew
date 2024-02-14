@@ -1,0 +1,16 @@
+const express = require('express')
+const userRoutes = require('./src/user/routes')
+const app = express();
+const port = 3000;
+
+app.listen(port, () =>{
+        console.log(`app listening on port ${port}`)
+});
+
+app.get("/", (req, res) =>{
+    res.send('hello');
+});
+
+app.use(express.json());
+
+app.use("/smartnas_db/user_profile", userRoutes);
