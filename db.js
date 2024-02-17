@@ -7,7 +7,8 @@ const pool = new Pool({
          password: 'BGGguNuWZylRx0NOywm8JqeTf0DKmcvb',
         port: '5432',
         ssl: {
-                rejectUnauthorized: false
+                rejectUnauthorized: false,
+                sslmode: 'require'
             }
 });
 
