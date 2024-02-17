@@ -1,8 +1,9 @@
 const Pool = require('pg').Pool;
 const pool = new Pool({
         user: 'mebdubdr',
-        host: 'postgres://mebdubdr:BGGguNuWZylRx0NOywm8JqeTf0DKmcvb@bubble.db.elephantsql.com/mebdubdr',
+        host: 'bubble.db.elephantsql.com',
         // database: 'smartnas_db',
+        database: "smartnas",
          password: 'BGGguNuWZylRx0NOywm8JqeTf0DKmcvb',
         port: '5432',
         ssl: {
