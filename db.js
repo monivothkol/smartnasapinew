@@ -3,8 +3,8 @@ const pool = new Pool({
         user: 'mebdubdr',
         host: 'bubble.db.elephantsql.com',
         // database: 'smartnas_db',
-        database: "smartnas",
-         password: 'BGGguNuWZylRx0NOywm8JqeTf0DKmcvb',
+        database: "mebdubdr",
+        password: 'BGGguNuWZylRx0NOywm8JqeTf0DKmcvb',
         port: '5432',
         ssl: {
                 rejectUnauthorized: false,
