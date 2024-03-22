@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
-const controller = require ('./controller')
-const userResourceRouter = Router()
+const controller = require ('./controller');
+
 
 router.get("/", controller.getUser);
 router.get("/:phonenumber", controller.getUserbyPhoneNumber);
@@ -10,7 +10,11 @@ router.post("/", controller.addUser);
 router.get("/byID/:idcard", controller.getUserbyIDCard);
 
 
-userResourceRouter.get("/:phonenumber", controller.getUserResource);
+
 
 module.exports = router;
-module.exports = userResourceRouter;
+
+// module.exports = {
+//     mainRouter: router,
+//     userResourceRouter: userResourceRouter
+//   };

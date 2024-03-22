@@ -41,17 +41,9 @@ const getUserbyIDCard = (req,res) => {
         res.status(200).json(results.rows);
     });
 };
-const getUserResource = (req,res) => {
-    const phoneNumber = parseInt(req.params.phonenumber);
-    pool.query(Query.getUserResource, [phoneNumber], (error, results)=>{
-        if(error) throw error;
-        res.status(200).json(results.rows);
-    });
-}
 module.exports = {
     getUser,
     getUserbyPhoneNumber,
     addUser,
     getUserbyIDCard,
-    getUserResource
 };
