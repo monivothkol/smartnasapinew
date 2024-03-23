@@ -1,6 +1,6 @@
 
 const getUserResource = "select * from user_resource where phonenumber = $1";
-const updateMainBalance = `
+const topupBalance = `
     UPDATE user_resource 
     SET mainbalance = mainbalance + $1 
     WHERE phonenumber = $2
@@ -8,5 +8,5 @@ const updateMainBalance = `
 module.exports = {
 
     getUserResource,
-    updateMainBalance
+    topupBalance
 };
