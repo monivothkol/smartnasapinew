@@ -5,7 +5,7 @@ const controller = require ('../resource/controller');
 
 
 router.get("/:phonenumber", controller.getUserResource);
-
+router.put('/updateMainBalance', controller.updateMainBalance);
 
 
 
