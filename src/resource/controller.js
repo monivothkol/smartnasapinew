@@ -23,8 +23,8 @@ const updateMainBalance = (req, res) => {
 };
 
 const increaseValidity = (req, res) => {
-    const {phonenumber, validity} = req.body;
-    pool.query(Query.increaseValidity, [validity, phonenumber], (error, results) => {
+    const {phonenumber, mainvalidity} = req.body;
+    pool.query(Query.increaseValidity, [mainvalidity, phonenumber], (error, results) => {
         if(error){
             console.error(error);
             return res.status(500).json({ error: 'Internal server error' });
