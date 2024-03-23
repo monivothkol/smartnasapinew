@@ -12,8 +12,6 @@ const getUserResource = (req,res) => {
 
 const updateMainBalance = (req, res) => {
     const { phonenumber, mainbalance } = req.body;
-
-    // Update mainbalance in the database
     pool.query(Query.topupBalance, [mainbalance, phonenumber], (error, results) => {
         if (error) {
             console.error(error);
@@ -23,7 +21,19 @@ const updateMainBalance = (req, res) => {
         res.status(200).json({ message: 'Mainbalance updated successfully' });
     });
 };
+
+const increaseValidity = (req, res) => {
+    const {phonenumber, validity} = req.body;
+    pool.query(Query.increaseValidity, [validity, phonenumber], (error, results) => {
+        if(error){
+            console.error(error);
+            return res.status(500).json({ error: 'Internal server error' });
+        }
+        res.status(200).json({ message: 'Validity updated successfully' });
+    });
+};
 module.exports = {
     getUserResource,
-    updateMainBalance
+    updateMainBalance,
+    increaseValidity
 };
